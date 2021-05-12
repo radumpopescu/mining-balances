@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  mining-balances:
+    image: node:14-alpine
+    container_name: mining-balances
+    working_dir: /app
+    volumes:
+      - "./:/app"
+    environment:
+      DEBUG: "false"
+    restart: always
+    command: sh -c "npm install && npm start"
